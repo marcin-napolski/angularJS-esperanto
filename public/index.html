@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>Esperanto</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="js/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="js/angular/angular.js"></script>
+    <script src="js/angular-animate/angular-animate.js"></script>
+    
+    <script src="js/angular-route/angular-route.js"></script>
+    <script src="js/angular-messages/angular-messages.js"></script>
+    <script src="js/angular-cookies/angular-cookies.js"></script>
+    <script src="js/angular-ui-bootstrap/0.14.3/package/ui-bootstrap-tpls.js"></script>
+  
+  
+    <link rel="stylesheet" href="js/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="js/html5-boilerplate/dist/css/main.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+    <link rel="stylesheet" href="app.css">  
+    
+    <script src="app.js"></script> 
+    <!--script src="slownik/words.js"></script--> 
+
+    <script src="controllers/GramatykaController.js"></script>    
+    <script src="controllers/SlownikController.js"></script>   
+    <script src="controllers/QuizController.js"></script>  
+    
+    <!-- When Angular bootstraps the application, the HTML compiler traverses the DOM matching directives against the DOM elements. -->
+    <script src="directives/start.js"></script>  
+    <script src="directives/historia.js"></script> 
+    <script src="directives/alfabet.js"></script>
+    <script src="directives/words.js"></script>
+    <script src="directives/parts.js"></script>      
+    <script src="directives/slowotworstwo.js"></script>    
+    <script src="directives/quiz.js"></script>  
+    
+    <script src="services/CompileService.js"></script> 
+    <script src="services/StartService.js"></script>   
+   
+    <script src="factories/QuizFactory.js"></script>  
+    <script src="factories/WordsFactory.js"></script> 
+  </head>
+  
+  <!-- Scroll spy idea found on http://www.w3schools.com/bootstrap/bootstrap_scrollspy.asp -->
+  
+  <!-- The scrollable area -->
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+    <!-- The navbar - The <a> elements are used to jump to a section in the scrollable area -->
+    <!-- The data-target attribute with a value of the id or the class name of the navigation bar (.navbar) makes sure that the navbar is connected with the scrollable area. -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-star" style="color:green"></span> Esperanto</a>
+        </div>
+        <div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="#section1"><span class="glyphicon glyphicon-home"></span></a></li>
+              <li><a href="#section2">Historia</a></li>
+              <li><a href="#section3">Słownik</a></li>
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Gramatyka<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#section41">Alfabet</a></li>
+                  <li><a href="#section42">Części mowy</a></li>
+                  <li><a href="#section43">Słowotwórstwo</a></li>
+                </ul>
+              </li>
+              <li><a href="#section5">Test</a></li>
+              <li><a href="#section6">Linki</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>    
+
+    <div id="App" ng-app="esperantoPlatform" >
+      <div id="section1" class="container-fluid" ng-controller="startCtrl">
+        <h1>Esperanto</h1>
+        <div id="start-content" start>
+          <!--start-directive></start-directive-->
+          <!--div ng-include="'start/start.html'"></div-->
+        </div>
+      </div>
+      <div id="section2" class="container-fluid" ng-controller="historiaCtrl">
+        <h1>Historia</h1>
+        <div class="container" historia>
+          <!--div ng-include="'historia/historia.html'"></div-->
+        </div>
+      </div>
+      
+      <div id="section3" class="container-fluid" ng-controller="wordsCtrl">
+        <h1>Słownik</h1>
+        <div class="container">
+          <words></words>
+          <!--div ng-include="'slownik/words.html'"></div-->
+        </div>
+      </div>
+      
+      <div id="section41" class="container-fluid" ng-controller="startCtrl">
+        <h1>Alfabet</h1>
+        <div class="container" alfabet>
+          <div ng-include="'gramatyka/alfabet.html'"></div>
+        </div>
+      </div>
+      <div id="section42" class="container-fluid" ng-controller="gramatykaCtrl">
+        <h1>Części mowy</h1>
+        <div class="container"> 
+          <parts></parts>
+          <!--div ng-include="'gramatyka/parts.html'"></div-->
+        </div>
+      </div>
+      <div id="section43" class="container-fluid" ng-controller="startCtrl">
+        <h1>Słowotwórstwo</h1>
+        <div class="container" slowotworstwo>
+          <!--div ng-include="'gramatyka/slowotworstwo.html'"></div-->
+        </div>
+      </div>
+      
+      <div id="section5" class="container-fluid" ng-controller="wordsCtrl">
+        <h1>Quiz</h1>
+        <div class="container" quiz>
+          <!--div ng-include="'test/index.html'"></div-->
+        </div>
+      </div>
+      
+      <div id="section6" class="container-fluid" ng-controller="startCtrl">
+        <h1>Linki</h1>
+        <div class="container">
+          <div ng-include="'start/linki.html'"></div>
+        </div>
+      </div> 
+      
+      <div id="footer" class="container-fluid" ng-controller="startCtrl">
+        <p>
+            <a class="navbar-brand" href="mailto:marcin.napolski@gmail.com"><span class="glyphicon glyphicon-envelope" style="color:green"></span> Marcin Napolski</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
