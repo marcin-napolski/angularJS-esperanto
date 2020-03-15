@@ -1,0 +1,42 @@
+
+
+    <p>W naszej bazie danych znajduje się obecnie <span class="badge">{{totalItems}}</span> słów. </p>  
+<hr>  
+
+<div align="center">        
+    <div align="left" class="panel panel-primary" style="width:80%" >
+      <div class="panel-heading">Szukaj: <input class="search-input" type="text" data-toggle="tooltip" 
+        title="cx = ĉ &#13;gx = ĝ &#13;hx = ĥ &#13;jx = ĵ &#13;sx = ŝ &#13;ux = ŭ" 
+        ng-model="searchText" placeholder="wpisz szukane słowo" ng-trim='true' />
+
+        <!-- ng-model - directive that binds the value of an input field to a variable created in AngularJS. The binding goes both ways. 
+        If the user changes the value inside the input field, the AngularJS property will also change it's value. -->
+        
+        <!--span class="label label-info">{{getEsperantoLetters(searchText)}}</span-->
+        
+      </div>
+      <div class="fixed-panel" style="color:blue; height:270px">
+
+          <table class="table table-condensed table-striped">
+
+              <tr ng-repeat="word in words | filter:getEsperantoLetters(searchText)  |orderBy : 'wordEO'" class="repeated-item">
+                
+                <td class="col-md-6" align="left">{{word.wordEO}}  </td>
+                <td class="col-md-6" align="left">{{word.wordPL}}  </td>
+                
+              </tr>
+
+           </table>
+
+      </div>
+      <div class="panel-footer" style="color:blue">
+
+      </div>
+    </div>
+</div>
+    
+
+ 
+
+
+

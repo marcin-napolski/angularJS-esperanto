@@ -1,0 +1,118 @@
+
+
+<p>W esperanto wyróżnia się następujące liczebniki.</p>
+<div align="center" >  
+ <!--div class="btn-group" style="width:80%" data-toggle="collapse"  data-target="#liczebnikiTable" id="parent"  -->
+ <div class="btn-group" style="width:80%" id="parent" ng-click="gramatykaCtrl.show=true">
+ 
+  <button type="button" class="btn btn-primary" ng-click='glowne()'>Główne</button>
+  <button type="button" class="btn btn-primary" ng-click='porzadkowe()'>Porządkowe</button>
+  <button type="button" class="btn btn-primary" ng-click='rzeczownikowe()' >Rzeczownikowy</button>
+  <button type="button" class="btn btn-primary" ng-click='przyslowne()'>Przysłowny</button>
+  <button type="button" class="btn btn-primary" ng-click='mnozne()'>Mnożne</button>
+  <button type="button" class="btn btn-primary" ng-click='ulamkowe()'>Ułamkowe</button>
+  <button type="button" class="btn btn-primary" ng-click='zbiorowe()'>Zbiorowe</button>
+  <button type="button" class="btn btn-primary" ng-click='ilorakie()'>Ilorakie</button>
+  <!--button type="button" class="btn btn-primary" ng-click='wielorakie()'>Wielorakie</button>
+  <button type="button" class="btn btn-primary" ng-click='podzialowe()'>Podziałowe</button-->  
+ </div>
+</div>
+<hr width="90%">
+<!--div align="center" id="liczebnikiTable" class="panel-collapse" -->    
+<div align="center" id="liczebnikiTable" class="appear" ng-if="gramatykaCtrl.show">   
+    <table class="table table-striped table-bordered table-hover table-condensed" style="width:80%; background-color:  #D9EDF7">
+      <col width="20%" align="center"/>
+      <col width="40%" align="center"/>
+      <col width="40%" align="center"/>
+            <tbody align="center">
+            <!--thead -->
+            <tr>
+                <td><b>#</b></td>
+                <td><b>EO</b></td>
+                <td><b>PL</b></td>
+            </tr>
+            <!--/thead-->
+
+            <tr>
+                  <td>{{zeroNumber}}</td>
+                  <td>{{zeroEO}}</td>
+                  <td>{{zeroPL}}</td>
+            </tr>
+            <tr>
+                  <td>{{oneNumber}}</td>
+                  <td>{{oneEO}}</td>
+                  <td>{{onePL}}</td>
+            </tr>
+           <tr>
+                  <td>{{twoNumber}}</td>
+                  <td>{{twoEO}}</td>
+                  <td>{{twoPL}}</td>
+            </tr>
+            <tr>
+                  <td>{{threeNumber}}</td>
+                  <td>{{threeEO}}</td>
+                  <td>{{threePL}}</td>
+            </tr>
+            <tr>
+                  <td>{{fourNumber}}</td>
+                  <td>{{fourEO}}</td>
+                  <td>{{fourPL}}</td>
+            </tr>
+            <tr>
+                  <td>{{fiveNumber}}</td>
+                  <td>{{fiveEO}}</td>
+                  <td>{{fivePL}}</td>
+            </tr>
+            <tr>
+                  <td>{{sixNumber}}</td>
+                  <td>{{sixEO}}</td>
+                  <td>{{sixPL}}</td>
+            </tr>
+            <tr>
+                  <td>{{sevenNumber}}</td>
+                  <td>{{sevenEO}}</td>
+                  <td>{{sevenPL}}</td>
+            </tr>
+           <tr>
+                  <td>{{eightNumber}}</td>
+                  <td>{{eightEO}}</td>
+                  <td>{{eightPL}}</td>
+            </tr>
+            <tr>
+                  <td>{{nineNumber}}</td>
+                  <td>{{nineEO}}</td>
+                  <td>{{ninePL}}</td>
+            </tr>
+            <tr>
+                  <td>{{tenNumber}}</td>
+                  <td>{{tenEO}}</td>
+                  <td>{{tenPL}}</td>
+            </tr>
+            <tr>
+                  <td>{{elevenNumber}}</td>
+                  <td>{{elevenEO}}</td>
+                  <td>{{elevenPL}}</td>
+            </tr>
+            <tr>
+                  <td>{{twentyNumber}}</td>
+                  <td>{{twentyEO}}</td>
+                  <td>{{twentyPL}}</td>
+            </tr>
+            <tr>
+                  <td>{{twentyOneNumber}}</td>
+                  <td>{{twentyOneEO}}</td>
+                  <td>{{twentyOnePL}}</td>
+            </tr>  
+            <tr>
+                  <td>{{oneHundredNumber}}</td>
+                  <td>{{oneHundredEO}}</td>
+                  <td>{{oneHundredPL}}</td>
+            </tr>
+            <tr>
+                  <td>{{oneTousandNumber}}</td>
+                  <td>{{oneTousandEO}}</td>
+                  <td>{{oneTousandPL}}</td>
+            </tr>              
+            </tbody>
+    </table>
+</div>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script> 
+$(document).ready(function(){
+
+var selectors = new Array();
+for(i=1; i <=9; i++)
+{
+    selectors.push(i);   
+}
+
+$(selectors).each(function(index, item){
+    $("#flip" + item).click(function(){ 
+      $("#panel" + item).slideToggle("slow" , function() {
+      });
+      //$("#panel" + item).toggleClass("blue");
+    });     
+}); 
+ 
+
+  
+});
+</script>
+
+</head>
+  
+<body>
+   <!--
+ <script>
+   $( ".inner" ).append( ' <div class="panel panel-info"><div class="panel-heading" id="flip1">Rzeczowniki</div><div class="panel-body" id="panel1"><div class="container\> <div ng-include="gramatyka/rzeczowniki.html"></div> </div></div></div>' );
+ </script>
+  <hr>
+  <div class="inner">I would like to say: </div>
+ --> 
+  <!--div class="container"-->  
+  <!--{{onePL}}-->
+  <div class="panel panel-info">
+    <div class="panel-heading" id="flip1"><span class="glyphicon glyphicon-book"></span> Rzeczowniki</div>
+    <div class="panel-body" id="panel1">
+      <div ng-include="'views/rzeczowniki.html'"></div>
+    </div> 
+  </div>
+  <!--/div-->
+  
+  <div class="panel panel-info">
+    <div class="panel-heading" id="flip2"><span class="glyphicon glyphicon-book"></span> Czasowniki</div>
+    <div class="panel-body" id="panel2">
+      <div ng-include="'views/czasowniki.html'"></div>
+    </div>
+  </div>
+      
+
+  <div class="panel panel-info">
+    <div class="panel-heading" id="flip3"><span class="glyphicon glyphicon-book"></span> Przymiotniki</div>
+    <div class="panel-body" id="panel3">
+      <div ng-include="'views/przymiotniki.html'"></div>
+    </div>
+  </div>
+  
+ <div class="panel panel-info">
+   <div class="panel-heading" id="flip4"><span class="glyphicon glyphicon-book"></span> Przysłówki</div>
+   <div class="panel-body" id="panel4">
+     <div class="container">
+       <div ng-include="'views/przyslowki.html'"></div>
+     </div>
+   </div>
+ </div>
+  
+ <div class="panel panel-info">
+   <div class="panel-heading" id="flip5"><span class="glyphicon glyphicon-book"></span> Zaimki</div>
+   <div class="panel-body" id="panel5">
+     <div class="container">
+       <div ng-include="'views/zaimki.html'"></div>
+     </div>
+   </div>
+ </div>
+
+ <div class="panel panel-info">  
+   <div class="panel-heading" id="flip6"><span class="glyphicon glyphicon-book"></span> Liczebniki</div>
+   <div class="panel-body" id="panel6" ng-controller="gramatykaCtrl">
+     <div class="container">
+       <div ng-include="'views/liczebniki.html'"></div>
+     </div>
+   </div>
+ </div>
+  
+ <div class="panel panel-info">  
+   <div class="panel-heading" id="flip7"><span class="glyphicon glyphicon-book"></span> Przyimiki</div>
+   <div class="panel-body" id="panel7">
+     <div class="container">
+       <div ng-include="'views/przyimki.html'"></div>
+     </div>
+   </div>
+ </div>
+  
+ <div class="panel panel-info">  
+   <div class="panel-heading" id="flip8"><span class="glyphicon glyphicon-book"></span> Imiesłowy</div>
+   <div class="panel-body" id="panel8">
+     <div class="container">
+       <div ng-include="'views/imieslowy.html'"></div>
+     </div>
+   </div>
+ </div>
+  
+ <div class="panel panel-info">  
+   <div class="panel-heading" id="flip9"><span class="glyphicon glyphicon-book"></span> Spójniki</div>
+   <div class="panel-body" id="panel9">
+     <div class="container">
+       <div ng-include="'views/spojniki.html'"></div>
+     </div>
+   </div>
+ </div>
+  
+<hr>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

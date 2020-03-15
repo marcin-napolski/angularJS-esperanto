@@ -1,0 +1,39 @@
+
+
+<div class="quiz-area2" ng-show="inProgress">
+  <div ng-show="!quizOver">
+    <p id="question">{{question}}</p>
+    <ul id="options">
+      <div ng-repeat="option in options">
+        <label>
+           <input type="button" id="style_{{$index}}" class="{{style}}" value={{option}} ng-click="checkAnswer(option)" ng-disabled="!answerMode">
+          <!-- class="{{style}} dzialalo" -- id="style_{{$index}}"-->
+        </label>
+      </div>
+    </ul>
+
+    <div ng-show="!answerMode">
+      <span ng-show="correctAns">Zgadza się!</span>
+      <span ng-show="!correctAns">Niestety, to nie jest poprawna odpowiedź.</span>
+    </div>
+  </div>
+
+  <div ng-show="quizOver">
+    <p>Quiz is over</p>
+    <button class="btn btn-default" ng-click="reset()">Zagraj jeszcze raz</button>
+  </div>
+
+  <div id="score">
+    Score: {{score}}
+  </div>
+</div>
+
+<div class="intro" ng-show="!inProgress">
+  <p>Sprawdź swoją znajomość słownictwa.</p>
+  <!--p>Losowe pytanie numer <span class="badge">{{randomNumber}}</span> </p-->  
+
+  <button type="button" class="btn btn-primary" id="startQuiz" ng-click="start()">Rozpocznij quiz</button>
+  <hr width="90%">
+  <p></p>
+</div>
+
